@@ -51,7 +51,7 @@ export async function registerHandler(req: Request, res: Response) {
     //? check that the inputted email is already exist in DB or not
     const existingUser = await User.findOne({ email: normalizeEmail });
     if (existingUser) {
-      res.status(409).json({
+      return res.status(409).json({
         message:
           "This email is already in use please try with a different email.",
       });
