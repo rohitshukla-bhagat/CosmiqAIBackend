@@ -1,14 +1,11 @@
 import { connectToDB } from "./config/db";
 import dotenv from "dotenv";
 import http from "http";
-import dns from "node:dns";
 import app from './app';
+import dns from "dns";
 
+dns.setDefaultResultOrder("ipv4first");
 dotenv.config();
-
-// Fix for Node.js fetch timeout on networks with broken IPv6
-dns.setDefaultResultOrder('ipv4first');
-
 
 async function startServer() {
     await connectToDB();
