@@ -14,7 +14,7 @@ import { auth, OAuth2Client } from "google-auth-library";
 import { authenticator } from "otplib";
 
 function getAppUrl() {
-  return process.env.CLIENT_URL || `http://localhost:${process.env.PORT}`;
+  return process.env.APP_URL || `http://localhost:${process.env.PORT}`;
 }
 
 const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
